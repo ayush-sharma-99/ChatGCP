@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
@@ -12,24 +11,20 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building Webpage..."
-                // For Windows:
-                bat 'dir'
-                // For Linux users use:
-                // sh 'ls -la'
+                sh 'ls -la'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploy Step (currently dummy)"
-                echo "Website files: index.html + styles.css"
+                echo "Deploy Stage (dummy for now)."
             }
         }
     }
 
     post {
         success {
-            echo "Pipeline finished successfully!"
+            echo "Pipeline Successful!"
         }
     }
 }
